@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const methodOverride = require('method-override');
+
 
 // It's very important to require dotenv before any other module
 // that depends upon the properties added to process.env 

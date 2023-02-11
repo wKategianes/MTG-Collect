@@ -8,5 +8,7 @@ const collectionsCtrl = require('../controllers/collections');
 router.get('/', collectionsCtrl.index);
 // GET /collections/new (new functionality)
 router.get('/new', collectionsCtrl.new);
+// GET /collections/show (show functionality)
+router.get('/show', collectionsCtrl.show);
 
 module.exports = router;

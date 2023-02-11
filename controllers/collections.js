@@ -2,7 +2,8 @@ const Collection = require('../models/collection');
 
 module.exports = {
     index,
-    new: newCollection
+    new: newCollection,
+    show
 };
 
 function index(req, res) {
@@ -11,6 +12,10 @@ function index(req, res) {
     });
 };
 
-function newCollection(req, res){
+function newCollection(req, res) {
     res.render('collections/new', {title: 'Add Deck'});
 };
+
+function show(req, res) {
+    res.render('collections/show', {title: 'My Decks'});
+}

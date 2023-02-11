@@ -6,3 +6,40 @@ body {
 a {
   color: #00B7FF;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-image: url("../images/background.jpg");
+  background-size: cover; */
+  margin: 0;
+}
+
+body > nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  border-radius: 20px;
+  background-color: #b8c0c2;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav > a:hover {
+  background-color: black;
+  color: white;
+}
+
+nav > img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}

@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 var passport = require('passport');
 const methodOverride = require('method-override');
 
@@ -18,6 +19,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var collectionsRouter = require('./routes/collections.js')
 
 var app = express();
 
@@ -37,10 +39,11 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Custom Middle-ware function
+// access to user variable via res.locals
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   next();
@@ -48,6 +51,7 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/collections', collectionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

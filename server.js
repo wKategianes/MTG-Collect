@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
-const methodOverride = require('method-override');
+var methodOverride = require('method-override');
 
 
 // It's very important to require dotenv before any other module

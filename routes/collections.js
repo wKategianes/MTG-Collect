@@ -10,5 +10,7 @@ router.get('/', collectionsCtrl.index);
 router.get('/new', collectionsCtrl.new);
 // GET /collections/show (show functionality)
 router.get('/show', collectionsCtrl.show);
+// POST /collections
+router.post('/', collectionsCtrl.create);
 
 module.exports = router;

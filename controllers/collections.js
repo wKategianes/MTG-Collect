@@ -3,7 +3,8 @@ const Collection = require('../models/collection');
 module.exports = {
     index,
     new: newCollection,
-    show
+    show,
+    create
 };
 
 function index(req, res) {
@@ -18,4 +19,12 @@ function newCollection(req, res) {
 
 function show(req, res) {
     res.render('collections/show', {title: 'My Decks'});
+}
+
+function create(req, res) {
+    const collection = new Collection(req.body);
+    collection.save(function(err) {
+        if (err) return res.redirect('/collections/new');
+        res.redirect('collections/new');
+    })
 }

@@ -19,7 +19,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var collectionsRouter = require('./routes/collections.js')
+var collectionsRouter = require('./routes/collections')
 
 var app = express();
 

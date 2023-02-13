@@ -1,4 +1,5 @@
 const Collection = require('../models/collection');
+const MTGcard = require('../models/card')
 
 module.exports = {
     index,
@@ -9,7 +10,7 @@ module.exports = {
 
 function index(req, res) {
     Collection.find({}, function(err, collections){
-        res.render('collections/index', {title: 'All Decks'});
+        res.render('collections/index', {title: 'All Decks', collections});
     });
 };
 

@@ -1,5 +1,18 @@
 <%- include('../partials/header') %>
 
 <h2>collections/index</h2>
+
+<table>
+    <tr>
+        <th>Deck Name</th>
+        <th>Format</th>
+    </tr>
+    <% collections.forEach(function(c) { %>
+    <tr>
+        <td><%= c.deckName %></td>
+        <td><%= c.format %></td>
+    </tr>
+    <% }); %>
+</table>
   
 <%- include('../partials/footer') %>

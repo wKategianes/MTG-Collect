@@ -1,5 +1,5 @@
 const Collection = require('../models/collection');
-const MTGcard = require('../models/card')
+const MTG_URL = 'https://api.magicthegathering.io/v1/cards/';
 
 module.exports = {
     index,
@@ -15,7 +15,7 @@ function index(req, res) {
 };
 
 function newCollection(req, res) {
-    res.render('collections/new', {title: 'Add Deck'});
+    res.render('collections/new', {title: 'Add Deck',});
 };
 
 function show(req, res) {

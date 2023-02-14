@@ -1,6 +1,7 @@
 const Card = require('../models/card');
 const MTG_URL = 'https://api.magicthegathering.io/v1/cards?';
 
+
 module.exports = {
     index,
 };

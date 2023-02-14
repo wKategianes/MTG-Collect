@@ -1,18 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const MTG_URL = 'https://api.magicthegathering.io/v1/cards';
+const cardController = require('../controllers/cards');
 
-// All routes "starts with" / (root)
+// All routes "starts with" / (cards)
 
 // GET a card
-router.get('/', function(req, res) {
-    const cName = req.query.name;
-
-    fetch(`${MTG_URL}/cards/${cName}`)
-    .then(res => res.json())
-    .then(cardData => {
-        res.render('index', {cardData});
-    });
-});
+router.get('/', cardController.index);
 
 module.exports = router;

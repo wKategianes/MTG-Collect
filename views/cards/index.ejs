@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<h2>cards/index</h2>
+
+<table>
+    <tr>
+        <th>Deck Name</th>
+        <th>Format</th>
+    </tr>
+    <% cardData.forEach(function(c) { %>
+        <%= c.name %>
+        <img src="<%= c.imageUrl %>">
+
+    <% }); %>
+</table>
+  
+<%- include('../partials/footer') %>

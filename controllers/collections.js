@@ -10,16 +10,16 @@ module.exports = {
 
 function index(req, res) {
     Collection.find({}, function(err, collections){
-        res.render('collections/index', {title: 'All Decks', collections});
+        res.render('collections/index', {title: 'All Collections', collections});
     });
 };
 
 function newCollection(req, res) {
-    res.render('collections/new', {title: 'Add Deck',});
+    res.render('collections/new', {title: 'Add Cards',});
 };
 
 function show(req, res) {
-    res.render('collections/show', {title: 'My Decks'});
+    res.render('collections/show', {title: 'My Collection'});
 }
 
 function create(req, res) {

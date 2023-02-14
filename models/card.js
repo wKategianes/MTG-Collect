@@ -1,13 +1,22 @@
 const mongoose = require('mongoose');
-const mtg = require('mtgsdk');
+const user = require('./user');
 
 const Schema = mongoose.Schema;
 
 const cardSchema = new Schema ({
-    cardName: {
+    name: {
         type: String,
-        required: true
-    }
+    },
+    set: {
+        type: String,
+    },
+    imageUrl: {
+        type: String,
+    },
+    cardId: {
+        type: String,
+    },
+    users: [{type: Schema.Types.ObjectId, ref: "User"}]
 })
 
 module.exports = mongoose.model('Card', cardSchema);

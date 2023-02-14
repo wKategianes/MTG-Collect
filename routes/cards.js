@@ -6,5 +6,7 @@ const cardController = require('../controllers/cards');
 
 // GET a card
 router.get('/', cardController.index);
+// GET an /card/:id
+router.get('/:id', cardController.show);
 
 module.exports = router;

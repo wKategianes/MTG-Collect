@@ -10,7 +10,7 @@
     <% cardData.forEach(function(c) { %>
         <%= c.name %>
         <img src="<%= c.imageUrl %>">
-        <a href="https://www.tcgplayer.com/search/all/product?q=<%= c.name %>&view=grid">Buy on TCG Player</a>
+        <a href="/cards/<%= c.id %>">Details</a>
 
     <% }); %>
 </table>

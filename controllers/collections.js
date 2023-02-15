@@ -20,8 +20,12 @@ function newCollection(req, res) {
 };
 
 function show(req, res) {
-    res.render('collections/show', {title: 'My Collection'});
-}
+    userId = req.user._id;
+    console.log(userId, 'We are logging userId');
+    Collection.find({user: userId}, function(err, collections){
+        res.render('collections/show', {title: 'My Collection', collections});
+    });
+};
 
 function create(req, res) {
     req.body.user = req.user._id;

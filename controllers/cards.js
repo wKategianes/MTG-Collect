@@ -1,36 +1,28 @@
 const Card = require('../models/card');
+const Collections = require('../models/collection');
 const MTG_URL = 'https://api.magicthegathering.io/v1/cards';
 
 
 module.exports = {
     index,
-    show
+    show,
+    create
 };
 
-// async function show(req, res) {
-    
-//     try {
-//         const card = await
-//         fetch(`${MTG_URL}/${req.params.id}`)
-//         .then(res => res.json())
-//         .then(card => card.card)
-//         res.render('cards/show', {title: 'Card Details', card})
-//         console.log(card, "This is the individual Card.");
-
-//     } catch (error) {
-//         const card = null;
-//         console.log(error, "This is the error of try/catch.");
-//         res.render('cards/show', {title: 'Card Details', card, error})
-//     }
-// }
+async function create (req, res) {
+    req.body.collections = req.params.id;
+    Card.create(req.body, function(err, card) {
+        res.redirect(`/collections/${req.params.id}`)
+    })
+};
 
 async function show(req, res) {    
     try {
-        let findCard = await Card.exists({cardId: req.params.id});
-        console.log(findCard, "This is the findCard console.log");
-        if (!findCard) {
+        let card = await Card.findOne({cardId: req.params.id});
+        console.log(card, "This is the card console.log");
+        if (!card) {
         
-            let card = await
+            card = await
             fetch(`${MTG_URL}/${req.params.id}`)
             .then(res => res.json())
             .then(card => card.card)
@@ -40,16 +32,17 @@ async function show(req, res) {
                 imageUrl: card.imageUrl,
                 cardId: card.id
             }
-            console.log(card.imageUrl, "This is the ImageUrl");
+            console.log(card.imageUrl, "This is the ImageUrl console.log");
             card = await Card.create(newCard);
             res.render('cards/show', {title: 'Card Details', card})
             console.log(card);
         }
-
-        res.render('cards/show', {title: 'Card Details', findCard})        
+        console.log("We are outside of the if statement");
+        res.render('cards/show', {title: 'Card Details', card})        
 
     } catch (error) {
         console.log(error);
+        const card = null;
         res.render('cards/show', {title: 'Card Details', card, error})        
     }
 

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const collectionSchema = new Schema ({
-    deckName: {
+    collectionName: {
         type: String,
         required: true
     },
@@ -11,7 +11,9 @@ const collectionSchema = new Schema ({
         type: String,
         required: true
     },
-    userName: String
+    card: [{type: Schema.Types.ObjectId, ref: "Card"}],
+    user: [{type: Schema.Types.ObjectId, ref: "User"}]
+
 });
 
 module.exports = mongoose.model('Collection', collectionSchema);

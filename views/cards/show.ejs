@@ -5,9 +5,10 @@
 <div><%= card.name %></div>
 <div><%= card.set %></div>
 <div><img src="<%= card.imageUrl %>"></div>
-<div><%= card.id %></div>
-<div></div>
-<div>
-    
-</div>
+<div><%= card.id %></div><br>
+
+<form action="/collections/<%= collection._id %>/cards" method="POST">
+    <input type="submit" value="Add Card">
+</form>
+
 <%- include('../partials/footer') %>

@@ -2,9 +2,10 @@
 
 <h2>cards/show</h2>
 
-<div><%= card.name %></div><br>
-<div><%= card.set %></div><br>
-<div><img src="<%= card.imageUrl %>"></div>
-<div><%= card.id %></div><br>
+<form action="/cards" method="GET">
+    <input type="text" name="name">
+    <input type="text" name="set">
+    <input type="submit">
+</form>
 
 <%- include('../partials/footer') %>

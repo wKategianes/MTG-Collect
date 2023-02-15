@@ -6,13 +6,22 @@ const MTG_URL = 'https://api.magicthegathering.io/v1/cards';
 module.exports = {
     index,
     show,
-    create
+    create,
+    new: newCard
+};
+
+function newCard(req, res) {
+    res.render('cards/new', {title: 'Add Cards'});
 };
 
 async function create (req, res) {
-    req.body.collections = req.params.id;
-    Card.create(req.body, function(err, card) {
-        res.redirect(`/collections/${req.params.id}`)
+    console.log
+    Collections.findById(req.params.id, function(err, collection){
+        collection.card.push(req.body);
+        console.log(collection.card);
+        collection.save(function(err){
+            res.redirect(`/collections/${collection._id}`)
+        })
     })
 };
 

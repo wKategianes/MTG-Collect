@@ -1,4 +1,5 @@
 const Collection = require('../models/collection');
+const Card = require('../models/card');
 const MTG_URL = 'https://api.magicthegathering.io/v1/cards/';
 
 module.exports = {
@@ -15,7 +16,7 @@ function index(req, res) {
 };
 
 function newCollection(req, res) {
-    res.render('collections/new', {title: 'Add Cards',});
+    res.render('collections/new', {title: 'Add Collections',});
 };
 
 function show(req, res) {
@@ -23,9 +24,10 @@ function show(req, res) {
 }
 
 function create(req, res) {
+    req.body.user = req.user._id;
     const collection = new Collection(req.body);
     collection.save(function(err) {
         if (err) return res.redirect('/collections/new');
-        res.redirect('collections/new');
+        res.redirect('/collections');
     })
 }

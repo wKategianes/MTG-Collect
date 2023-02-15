@@ -45,8 +45,6 @@ async function show(req, res) {
         const card = null;
         res.render('cards/show', {title: 'Card Details', card, error})        
     }
-
-
 }
 
 async function index(req, res) {

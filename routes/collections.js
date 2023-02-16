@@ -9,7 +9,7 @@ router.get('/', collectionsCtrl.index);
 // GET /collections/new (new functionality)
 router.get('/new', collectionsCtrl.new);
 // GET /collections/show (show functionality)
-router.get('/show', collectionsCtrl.show);
+router.get('/:id', collectionsCtrl.show);
 // POST /collections
 router.post('/', collectionsCtrl.create);
 

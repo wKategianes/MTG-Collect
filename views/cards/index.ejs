@@ -12,8 +12,14 @@
         <img src="<%= c.imageUrl %>">
         <%= c.id %>
         <a href="/cards/new">Add Card</a>
+        <form>
+            <select name="collection">
+            <% collections.forEach(function(x){ %>
+                <option value="<%= x._id %>"<%= x.collectionName %></option>
+            <% }) %>
+            </select>
+        </form>
     <% }); %>
 </table>
   
 <%- include('../partials/footer') %>
-

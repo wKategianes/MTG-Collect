@@ -20,10 +20,11 @@ function newCollection(req, res) {
 };
 
 function show(req, res) {
-    userId = req.user._id;
-    console.log(userId, 'We are logging userId');
-    Collection.find({user: userId}, function(err, collections){
-        res.render('collections/show', {title: 'My Collection', collections});
+    // userId = req.user._id;
+    // console.log(userId, 'We are logging userId');
+    Collection.findById(req.params.id, function(err, collection){
+        console.log(collection, "This is the collection variable");
+        res.render('collections/show', {title: 'My Collection', collection});
     });
 };
 

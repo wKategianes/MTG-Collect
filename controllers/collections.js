@@ -23,8 +23,10 @@ function show(req, res) {
     // userId = req.user._id;
     // console.log(userId, 'We are logging userId');
     Collection.findById(req.params.id, function(err, collection){
-        console.log(collection, "This is the collection variable");
-        res.render('collections/show', {title: 'My Collection', collection});
+        Card.find({collectionName: collection._id}, function(err, cards) {
+            console.log(collection, "This is the collection variable");
+            res.render('collections/show', {title: 'My Collection', collection, cards});
+        })
     });
 };
 

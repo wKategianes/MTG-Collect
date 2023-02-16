@@ -16,7 +16,8 @@ const cardSchema = new Schema ({
     cardId: {
         type: String,
     },
-    users: [{type: Schema.Types.ObjectId, ref: "User"}]
+    users: [{type: Schema.Types.ObjectId, ref: "User"}],
+    collectionName: [{type: Schema.Types.ObjectId, ref: "Collection"}]
 })
 
 module.exports = mongoose.model('Card', cardSchema);

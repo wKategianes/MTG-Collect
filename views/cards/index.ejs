@@ -11,14 +11,7 @@
         <%= c.name %>
         <img src="<%= c.imageUrl %>">
         <%= c.id %>
-        <a href="/cards/new">Add Card</a>
-        <form>
-            <select name="collection">
-            <% collections.forEach(function(x){ %>
-                <option value="<%= x._id %>"<%= x.collectionName %></option>
-            <% }) %>
-            </select>
-        </form>
+        <a href="/cards/<%= c.id %>">Details</a>
     <% }); %>
 </table>
   

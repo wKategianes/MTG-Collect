@@ -3,7 +3,6 @@ const Card = require('../models/card');
 const Collections = require('../models/collection');
 const MTG_URL = 'https://api.magicthegathering.io/v1/cards';
 
-
 module.exports = {
     index,
     show,
@@ -22,7 +21,6 @@ async function create (req, res) {
         res.redirect('/collections/show');
     })
 }
-
 
 async function show(req, res) {
     console.log(req.params.id, "This is the req.params.id variable");
@@ -48,7 +46,7 @@ async function show(req, res) {
             console.log(card);
         }
         console.log("We are outside of the if statement");
-        res.redirect('/cards/new', {title: 'Add Card', card})        
+        res.render('cards/show', {title: 'Add Card', card})        
 
     } catch (error) {
         console.log(error);

@@ -8,9 +8,9 @@ const cardController = require('../controllers/cards');
 router.get('/', cardController.index);
 // GET an /card/:id
 router.get('/:id', cardController.show);
-// GET /cards/new (new functionality)
+// // GET /cards/new (new functionality)
 router.get('/new', cardController.new);
 // POST a card to a collection
-router.post('collections/:id/cards', cardController.create);
+router.post('/collections/:id/cards', cardController.create);
 
 module.exports = router;

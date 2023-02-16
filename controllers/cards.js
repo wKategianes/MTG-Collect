@@ -15,19 +15,17 @@ function newCard(req, res) {
 };
 
 async function create (req, res) {
-    console.log
-    Collections.findById(req.params.id, function(err, collection){
-        collection.card.push(req.body);
-        console.log(collection.card);
-        collection.save(function(err){
-            res.redirect(`/collections/${collection._id}`)
-        })
+    console.log("We are in the Create function.")
+    req.body.collection = req.params.id;
+    Card.create(req.body, function(err, card){
+        res.redirect('/collections/show');
     })
-};
+}
 
-async function show(req, res) {    
+
+async function show(req, res) {
     try {
-        let card = await Card.findOne({cardId: req.params.id});
+        let card = await Card.exists({cardId: req.params.id});
         console.log(card, "This is the card console.log");
         if (!card) {
         
@@ -47,7 +45,7 @@ async function show(req, res) {
             console.log(card);
         }
         console.log("We are outside of the if statement");
-        res.render('cards/show', {title: 'Card Details', card})        
+        res.redirect('/cards/new', {title: 'Add Card', card})        
 
     } catch (error) {
         console.log(error);

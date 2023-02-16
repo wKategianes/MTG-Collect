@@ -10,8 +10,8 @@
     <% cardData.forEach(function(c) { %>
         <%= c.name %>
         <img src="<%= c.imageUrl %>">
-        <a href="/cards/<%= c.id %>">Details</a>
-
+        <%= c.id %>
+        <a href="/cards/new">Add Card</a>
     <% }); %>
 </table>
   

@@ -6,7 +6,7 @@ const MTG_URL = 'https://api.magicthegathering.io/v1/cards';
 module.exports = {
     index,
     show,
-    create,
+    addToCollection,
     new: newCard
 };
 
@@ -14,12 +14,9 @@ function newCard(req, res) {
     res.render('cards/new', {title: 'Add Cards'});
 };
 
-async function create (req, res) {
-    console.log("We are in the Create function.")
-    req.body.collection = req.params.id;
-    Card.create(req.body, function(err, card){
-        res.redirect('/collections/show');
-    })
+async function addToCollection (req, res) {
+    req.body.collectionName = req.params.id;
+
 }
 
 async function show(req, res) {

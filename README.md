@@ -6,7 +6,7 @@ MTG Collect
 
  <div id="description" align="center">
       
- ### <a href="https://wkategianes.github.io/Mamma-Mia--Match-2/">Click to Demo</a>
+ ### <a href="https://mtg-collect-general-assembly.herokuapp.com/">Click to Demo</a>
 
       
   ##### William Kategianes

@@ -6,7 +6,9 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 // All routes start with '/reviews'
 
 // GET /reviews/:id/edit
-router.get('reviews/:id/edit', ensureLoggedIn, reviewsCtrl.edit);
+router.get('/reviews/:id/edit', ensureLoggedIn, reviewsCtrl.edit);
+// PUT /reviews/:id
+router.put('/reviews/:id', ensureLoggedIn, reviewsCtrl.update);
 // DELETE /reviews/show (show functionality)
 router.delete('/reviews/:id', ensureLoggedIn, reviewsCtrl.delete);
 // POST /collections

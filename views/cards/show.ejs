@@ -20,6 +20,9 @@
         <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
           <button type="submit">X</button>
         </form><br>
+
+        <a href="/reviews/<%= review._id %>/edit">Edit Comment</a>
+
       <% } %>
     </div>
   <% }) %>

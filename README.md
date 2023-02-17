@@ -21,9 +21,7 @@ Once you search the database by name and set of the intended card you can then l
  </div>
   
  <div id="document" align="left">
-  
 
-  ## :camera_flash: Screenshots 
 
 ## :computer: Technologies Used
   ![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)

@@ -12,6 +12,12 @@ MTG Collect
   ##### William Kategianes
 
   [![LinkedIn Badge](https://img.shields.io/badge/-@wKategianes-blue?style=flat&logo=Linkedin&logoColor=black)](https://www.linkedin.com/in/wkategianes/)
+ 
+  ## :camera_flash: Screenshots 
+ 
+ <details><summary>Home Page</summary><img src="https://user-images.githubusercontent.com/31415907/219752189-d0e56964-8dff-48c7-8273-81730f44fb13.png"></img></details>
+ 
+  <details><summary>Search Results</summary><img src="https://user-images.githubusercontent.com/31415907/219753004-68480fa4-7f3f-4766-9b1a-12a1df3d404b.png"></img></details> 
 
   ## :pencil: Description
 
@@ -49,3 +55,4 @@ Once you search the database by name and set of the intended card you can then l
 [:x:] Add a hover effect to the cards once moused over<br>
 [:x:] Add favicon
 </div>
+

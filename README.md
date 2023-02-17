@@ -50,8 +50,6 @@ Once you search the database by name and set of the intended card you can then l
 
 ## :ice_cube: Upcoming Features
 
-[:x:] Add flip animation to the cards<br>
-[:x:] Add sound a effect when a card is clicked on<br>
 [:x:] Add a hover effect to the cards once moused over<br>
 [:x:] Add favicon
 </div>

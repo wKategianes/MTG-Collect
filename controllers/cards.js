@@ -41,7 +41,7 @@ async function show(req, res) {
             card = await Card.create(newCard);
             res.render('cards/show', {title: 'Card Details', card, collection})
         }
-        res.render('cards/show', {title: 'Add Card', card, collection})        
+        res.render('cards/show', {title: 'Review Card', card, collection})        
 
     } catch (error) {
         const card = null;

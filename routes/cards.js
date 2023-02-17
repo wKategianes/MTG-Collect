@@ -11,6 +11,6 @@ router.get('/:id', cardController.show);
 // // GET /cards/new (new functionality)
 router.get('/new', cardController.new);
 // POST a card to a collection
-router.post('/collections/:id/cards', cardController.addToCollection);
+router.post('/', cardController.addToCollection);
 
 module.exports = router;

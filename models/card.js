@@ -3,6 +3,22 @@ const user = require('./user');
 
 const Schema = mongoose.Schema;
 
+const reviewSchema = new Schema({
+    content: {
+      type: String,
+      required: true
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    userName: String,
+    userAvatar: String
+  }, {
+    timestamps: true
+  });
+
 const cardSchema = new Schema ({
     name: {
         type: String,
@@ -17,7 +33,7 @@ const cardSchema = new Schema ({
         type: String,
     },
     users: [{type: Schema.Types.ObjectId, ref: "User"}],
-    collectionName: [{type: Schema.Types.ObjectId, ref: "Collection"}]
-})
+    reviews: [reviewSchema]
+});
 
 module.exports = mongoose.model('Card', cardSchema);

@@ -7,15 +7,22 @@
 <div><img src="<%= card.imageUrl %>"></div>
 <div><%= card.id %></div><br>
 
-<form action="/collections/<%= collection._id %>/cards" method="POST">
-    <select name="card">
-        <% collection.forEach(function (c){ %>
-            <option value="<%= c._id %>"><%= c.collectionName %></option>
-       <% }) %>
-        
-    </select>
-    <input type="submit" value="Add to Collection">
+<form action="/cards/<%= card.id %>/reviews" method="POST">
+    <label>Card Reviews</label><br>
+    <input type="text" name="content"><br>
+    <input type="submit" value="submit review">
 </form>
+
+<% card.reviews.forEach(function(review) { %>
+    <div class="review">
+      <%= review.content %><br>
+      <% if (user && review.user.equals(user._id)) { %>
+        <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form><br>
+      <% } %>
+    </div>
+  <% }) %>
 
 
 <%- include('../partials/footer') %>

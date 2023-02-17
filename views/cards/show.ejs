@@ -7,5 +7,15 @@
 <div><img src="<%= card.imageUrl %>"></div>
 <div><%= card.id %></div><br>
 
+<form action="/collections/<%= collection._id %>/cards" method="POST">
+    <select name="card">
+        <% collection.forEach(function (c){ %>
+            <option value="<%= c._id %>"><%= c.collectionName %></option>
+       <% }) %>
+        
+    </select>
+    <input type="submit" value="Add to Collection">
+</form>
+
 
 <%- include('../partials/footer') %>

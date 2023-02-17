@@ -37,7 +37,7 @@ Once you search the database by name and set of the intended card you can then l
              
 ## :joystick: How To Use
 <strong>Step 1.</strong> Start by clicking the login button.<br>
-<strong>Step 2.</strong> Once the play button has been clicked you may login using your google email account.<br>
+<strong>Step 2.</strong> Once the login button has been clicked you may login using your google email account.<br>
 <strong>Step 3.</strong> After you are logged in you begin by searching for a card by entering the name of the card followed by the set.<br>
 <strong>Step 4.</strong> Click the submit query button to search for your card!<br>
 <strong>Step 5.</strong> Once the search results display click the "details" button.<br>
